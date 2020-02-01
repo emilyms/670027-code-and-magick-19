@@ -13,12 +13,12 @@ var GAP = 50;
 var HEADER = FONT_SIZE * 4 + MARGIN;
 var PADDING = 5;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   if (arr.length) {
     var maxElement = arr[0];
 
