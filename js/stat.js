@@ -10,7 +10,7 @@ var MARGIN = 30;
 var CHART_HEIGHT = 150;
 var COLUMN_WIDTH = 40;
 var GAP = 50;
-var HEADER = FONT_SIZE*4 + MARGIN;
+var HEADER = FONT_SIZE * 4 + MARGIN;
 var PADDING = 5;
 
 var renderCloud = function(ctx, x, y, color) {
