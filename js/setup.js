@@ -7,23 +7,27 @@ var lastNames = ['да Марья', 'Верон', 'Мирабелла', 'Вал�
 var coats = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyes = ['black', 'red', 'blue', 'yellow', 'green'];
 
-var randomNumber = function (array) {
-  return Math.floor(Math.random() * array.length);
+var randomNumber = function (max) {
+  return Math.floor(Math.random() * max);
+};
+
+var getRandomArrayElement = function (array) {
+  return array[randomNumber(array.length)];
 };
 
 var randomWizards = [];
-var createRandomWizards = function () {
-  for (var i = 0; i < 4; i++) {
-    var wizard = {};
-    wizard.name = firstNames[randomNumber(firstNames)] + ' ' + lastNames[randomNumber(lastNames)];
-    wizard.coatColor = coats[randomNumber(coats)];
-    wizard.eyesColor = eyes[randomNumber(eyes)];
-    randomWizards.push(wizard);
+var createRandomWizards = function (count) {
+  for (var i = 0; i < count; i++) {
+    randomWizards.push({
+      name: getRandomArrayElement(firstNames) + ' ' + getRandomArrayElement(lastNames),
+      coatColor: getRandomArrayElement(coats),
+      eyesColor: getRandomArrayElement(eyes)
+    });
   }
   return randomWizards;
 };
 
-createRandomWizards();
+createRandomWizards(4);
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
